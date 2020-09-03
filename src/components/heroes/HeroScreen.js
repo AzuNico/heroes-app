@@ -25,17 +25,17 @@ export const HeroScreen = ({ history }) => {
     first_appearance,
     characters,
   } = hero;
-
+    console.log(characters);
   return (
-    <div className="row mt-5">
-      <div className="col-4">
+    <div className="row mt-5 mb-5">
+      <div className="col-md-4 col-sm-12 mb-3">
         <img
           src={`../assets/heroes/${heroeId}.jpg`}
           alt={superhero}
           className="img-thumbnail animate__animated animate__fadeInLeft"
         />
       </div>
-      <div className="col-8">
+      <div className="col-md-8 col-sm-12">
         <h3>{superhero}</h3>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
@@ -49,7 +49,10 @@ export const HeroScreen = ({ history }) => {
           </li>
         </ul>
         <h5>Personajes</h5>
-        <p>{characters}</p>
+        {/* <p>{characters}</p> */}
+        <ul>
+          {characters.map(char => ( <li>{char}</li>))}
+        </ul>
         <button className="btn btn-outline-info" onClick={handleReturn}>
           Regresar
         </button>
